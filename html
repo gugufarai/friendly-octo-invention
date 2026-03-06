@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora IMC</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<div class="container">
+
+<div class="logo">
+Calor<span class="ia">IA</span>
+</div>
+
+</div>
+</header>
+
+<section class="calculadora">
+
+<h2>Calcule seu IMC</h2>
+
+<input type="text" id="nome" placeholder="Digite seu nome">
+
+<input type="number" id="idade" placeholder="Sua Idade">
+
+<input type="number" id="peso" placeholder="Peso em kg">
+
+<input type="number" id="altura" placeholder="Altura em metros">
+
+<button id="calcular">Calcular IMC</button>
+
+<div id="resultado"></div>
+
+</section>
+
+<section class="altura-idade">
+<h2>Altura Média por Idade</h2>
+
+<input type="text" id="nome2" placeholder="Digite seu nome">
+
+<input type="number" id="altura2" placeholder="Altura (m)">
+
+<input type="number" id="idade2" placeholder="Digite sua idade (anos)">
+
+<button id="calcularAltura">Calcular Altura</button>
+
+<div id="resultadoAltura"></div>
+
+</section>
+
+<footer>
+<div class="footer-container">
+<p>Destaque para os criadores <span class="criadores">Gustavo Fiaça & Maclenio Magalhães</span></p>
+</div>
+</footer>
+
+<script>
+
+// lembrar o nome do usuário
+window.onload = function(){
+let nomeGuardado = localStorage.getItem("nomeUsuario");
+if(nomeGuardado){
+document.getElementById("nome").value = nomeGuardado;
+}
+}
+
+// CALCULADORA IMC
+document.getElementById("calcular").addEventListener("click", function(){
+
+let nome = document.getElementById("nome").value;
+let peso = parseFloat(document.getElementById("peso").value);
+let altura = parseFloat(document.getElementById("altura").value);
+
+localStorage.setItem("nomeUsuario", nome);
+
+let imc = peso / (altura * altura);
+
+let mensagem = "";
+
+if(imc < 18.5){
+mensagem = "você está abaixo do peso";
+}
+else if(imc < 25){
+mensagem = "você está com peso normal";
+}
+else if(imc < 30){
+mensagem = "você está acima do peso";
+}
+else{
+mensagem = "você está com obesidade";
+}
+
+document.getElementById("resultado").innerHTML =
+nome + ", seu IMC é " + imc.toFixed(2) + " e " + mensagem;
+
+});
+
+// CALCULADORA ALTURA MÉDIA POR IDADE
+document.getElementById("calcularAltura").addEventListener("click", function(){
+
+let nome = document.getElementById("nome2").value;
+let altura = parseFloat(document.getElementById("altura2").value);
+let idade = parseInt(document.getElementById("idade2").value);
+
+let media = 0;
+
+// exemplo simples de média
+if(idade < 12){
+media = 1.50;
+}
+else if(idade < 18){
+media = 1.70;
+}
+else{
+media = 1.75;
+}
+
+let resultado = "";
+
+if(altura > media){
+resultado = "você está acima da altura média para sua idade";
+}
+else if(altura < media){
+resultado = "você está abaixo da altura média para sua idade";
+}
+else{
+resultado = "você está exatamente na altura média";
+}
+
+document.getElementById("resultadoAltura").innerHTML =
+nome + ", " + resultado;
+
+});
+
+</script>
+
+</body>
+</html>
