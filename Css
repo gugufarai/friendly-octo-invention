@@ -1,0 +1,152 @@
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo da página */
+body{
+background:#ECE5DD;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* Header */
+header{
+width:100%;
+background:#25D366;
+padding:20px;
+text-align:center;
+color:white;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:white;
+}
+
+.ia{
+color:#075E54;
+background:white;
+padding:2px 6px;
+border-radius:4px;
+margin-left:3px;
+}
+
+/* Card da calculadora */
+.calculadora{
+background:#FFFFFF;
+padding:30px;
+margin-top:40px;
+border-radius:10px;
+width:300px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+.calculadora input{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+/* Botão */
+.calculadora button{
+width:100%;
+padding:12px;
+background:#25D366;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+/* Hover botão */
+.calculadora button:hover{
+background:#128C7E;
+}
+
+/* Resultado */
+#resultado{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+color:#333;
+}
+/* Seção Altura por Idade */
+.altura-idade{
+  background:#FFFFFF;
+  padding:30px;
+  margin-top:40px;
+  border-radius:10px;
+  width:300px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.altura-idade input{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+.altura-idade button{
+  width:100%;
+  padding:12px;
+  background:#25D366;
+  border:none;
+  color:white;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.altura-idade button:hover{
+  background:#128C7E;
+}
+
+#resultadoAltura{
+  margin-top:20px;
+  font-size:18px;
+  font-weight:bold;
+  color:#333;
+}
+/* Footer */
+footer {
+    background: #25D366;         /* verde WhatsApp */
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+}
+
+/* Container */
+.footer-container p {
+    margin: 0;
+}
+
+/* Nomes dos criadores destacados */
+.criadores {
+    font-weight: bold;
+    background: white;
+    color: #075E54; /* verde escuro WhatsApp */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
